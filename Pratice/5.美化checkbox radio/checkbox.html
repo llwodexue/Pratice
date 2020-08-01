@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var flag;
+			$("input:radio").click(function() {
+				// prop() 方法设置或返回被选元素的属性和值
+				// 具有 true 和 false 两个属性的属性，如 checked、selected、disabled 使用prop()，其他的使用 attr()
+				$(this).prop("checked", flag);
+				flag = !flag;
+			})
+		})
+	</script>
+	<style type="text/css">
+		#checkDecorate {
+			display: none;
+		}
+
+		label {
+			cursor: pointer;
+		}
+
+		.checkbox input:checked+label {
+			background: url(img/check2.png) left center no-repeat;
+		}
+
+		.checkbox input+label {
+			background: url(img/check1.png) left center no-repeat;
+			;
+			background-size: 20px 20px;
+			padding-left: 20px;
+		}
+
+		#radioDecorate {
+			display: none;
+		}
+
+		.radio input:checked+label {
+			background: url(img/check2.png) left center no-repeat;
+		}
+
+		.radio input+label {
+			background: url(img/check1.png) left center no-repeat;
+			;
+			background-size: 20px 20px;
+			padding-left: 20px;
+		}
+	</style>
+	<body>
+		<div class="checkbox">
+			<input type="checkbox" id="checkDecorate" />
+			<label for="checkDecorate">是否需要美化</label>
+		</div>
+		<div class="radio">
+			<input type="radio" id="radioDecorate" />
+			<label for="radioDecorate">是否需要美化</label>
+		</div>
+	</body>
+</html>

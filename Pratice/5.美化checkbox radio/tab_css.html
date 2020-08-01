@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			position: relative;
+			width: 300px;
+		}
+
+		ul li {
+			list-style: none;
+		}
+
+		ul li input {
+			display: none;
+		}
+
+		ul li label {
+			float: left;
+			width: 100px;
+			text-align: center;
+			line-height: 30px;
+			border: 1px solid #000;
+			box-sizing: border-box;
+			cursor: pointer;
+		}
+
+		ul li input:checked+label {
+			color: #fff;
+			background-color: #000;
+		}
+
+		ul li .content {
+			position: absolute;
+			opacity: 0;
+			visibility: hidden;
+			left: 0;
+			top: 31px;
+			height: 300px;
+		}
+
+		/*CSS*/
+		/* 		*{ margin: 0; padding: 0;}
+		ul{ position: relative; width: 300px; margin: 100px auto;}
+		ul li{ list-style: none;}
+		ul li input{ display: none;}
+		ul li label{ float: left; width: 100px; text-align: center; line-height: 30px; border: 1px solid #000; border-right: 0; box-sizing: border-box; cursor: pointer; transition: all .3s;}
+		ul li input:checked+label{ color: #fff; background-color: #000;}
+		ul li:last-child label{ border-right: 1px solid #000;}
+		ul li .content{ opacity: 0; visibility:hidden; position: absolute; left: 0; top: 31px; width: 100%; height: 300px; border: 1px solid #000; box-sizing: border-box; font-size: 24px; text-align: center; line-height: 300px; color: #fff; transition: all .3s;}
+		ul li:nth-child(1) .content{ background-color: #0f0;}
+		ul li:nth-child(2) .content{ background-color: #00f;}
+		ul li:nth-child(3) .content{ background-color: #f0f;}
+		ul li input:checked~.content{ opacity: 1; visibility:visible;} */
+	</style>
+	<body>
+		<!-- 当用户点击label元素时，该label所绑定的input单选框就会被选中，
+		同时通过使用CSS选择器让被选中的input元素之后的label和content元素都加上相应的样式 -->
+		<ul>
+			<li>
+				<input type="radio" id="tab1" name="tab" />
+				<label for="tab1">选项一</label>
+				<div class="content">选项一内容</div>
+			</li>
+			<li>
+				<input type="radio" id="tab2" name="tab" />
+				<label for="tab2">选项二</label>
+				<div class="content">选项二内容</div>
+			</li>
+			<li>
+				<input type="radio" id="tab3" name="tab" />
+				<label for="tab3">选项三</label>
+				<div class="content">选项三内容</div>
+			</li>
+		</ul>
+	</body>
+</html>
+<!-- 参考https://www.jianshu.com/u/f7e4b9837212 -->

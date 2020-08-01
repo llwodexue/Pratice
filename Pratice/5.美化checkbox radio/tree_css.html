@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		ol.tree {
+			/* 上右下左 */
+			padding: 0 0 0 30px;
+			width: 300px;
+		}
+
+		li {
+			position: relative;
+			margin-left: -15px;
+			list-style: none;
+		}
+
+		li.file {
+			margin-left: -1px !important;
+		}
+
+		li.file a {
+			background: url(img/document.png) no-repeat;
+			color: #4C4C4C;
+			padding-left: 20px;
+			text-decoration: none;
+			display: block;
+		}
+
+		/* 匹配 href 结尾带有.js的所有元素 */
+		li.file a[href $=".js"] {
+			color: aqua;
+		}
+
+		/* 匹配 href 中带有.css字符串的所有元素 */
+		li.file a[href *=".css"] {
+			color: aqua;
+		}
+
+		li input {
+			cursor: pointer;
+			position: absolute;
+			opacity: 0;
+		}
+
+		li label {
+			background: url(img/folder-horizontal.png) no-repeat;
+			cursor: pointer;
+			display: block;
+			padding-left: 20px;
+		}
+
+		li input+ol>li {
+			display: none;
+		}
+
+		li input:checked+ol>li {
+			display: block;
+		}
+	</style>
+	<body>
+		<ol class="tree">
+			<li>
+				<label for="floder1">Folder1</label>
+				<!-- 注意：input+ol 选择紧接input之后的所有ol -->
+				<input type="checkbox" id="floder1" checked="checked" />
+				<ol>
+					<li class="file"><a href="#">File1</a></li>
+					<li>
+						<label for="subfloder1">SubFloder1</label>
+						<input type="checkbox" id="subfloder1" checked="checked" />
+						<ol>
+							<li class="file"><a href="#.js">SubFile1</a></li>
+							<li class="file"><a href="#">SubFile2</a></li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<label for="floder2">Folder2</label>
+				<!-- 注意：input+ol 选择紧接input之后的所有ol -->
+				<input type="checkbox" id="floder2" />
+				<ol>
+					<li class="file"><a href="#">File1</a></li>
+					<li>
+						<label for="subfloder2">SubFloder1</label>
+						<input type="checkbox" id="subfloder2" />
+						<ol>
+							<li class="file"><a href="#.css">SubFile1</a></li>
+							<li class="file"><a href="#">SubFile2</a></li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<label for="floder3">Folder3</label>
+				<!-- 注意：input+ol 选择紧接input之后的所有ol -->
+				<input type="checkbox" id="floder3" />
+				<ol>
+					<li class="file"><a href="#">File1</a></li>
+					<li>
+						<label for="subfloder3">SubFloder1</label>
+						<input type="checkbox" id="subfloder3" />
+						<ol>
+							<li class="file"><a href="#">SubFile1</a></li>
+							<li class="file"><a href="#">SubFile2</a></li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</body>
+</html>
