@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.c1 {
+			border: 1px solid black;
+			width: 8em;
+			overflow-wrap: normal;
+			/* 打断单词，进行折行 */
+			overflow-wrap: break-word;
+
+			word-break: normal;
+			/* 不把单词当做一个单位 */
+			word-break: break-all;
+			/* 所有单词保持完整，中文句子也会保持完整 */
+			word-break: keep-all;
+
+			white-space: normal;
+			/* 长文本不换行 */
+			white-space: nowrap;
+		}
+
+		.c2 {
+			width: 8em;
+			border: 1px solid #ddd;
+			white-space: nowrap;
+			overflow: hidden;
+			/* 溢出添加 ... 需要将 overflow 设置在 text-overflow 前面 */
+			text-overflow: ellipsis;
+		}
+
+		.weight {
+			/* normal 一般是 400 */
+			font-weight: normal;
+			/* blod 一般是 700 */
+			font-weight: bold;
+
+			/* bolder 和 lighter 值取决去父集 */
+			/* font-weight: bolder; */
+			/* font-weight: lighter; */
+			font-weight: 400;
+
+			font-style: italic;
+			cursor: pointer;
+		}
+	</style>
+	<body>
+		<div class="c1">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus aut assumenda maiores delectus ullam minus
+			numquam laboriosam repudiandae explicabo atque illum esse recusandae magnam ipsa fuga dolorem consequuntur sapiente
+			mollitia.一二三四五六，七八九十十一，这是一个长长的句子可以换行的
+		</div>
+		<div class="c2">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus aut assumenda maiores delectus ullam minus
+			numquam laboriosam repudiandae explicabo atque illum esse recusandae magnam ipsa fuga dolorem consequuntur sapiente
+			mollitia.一二三四五六，七八九十十一，这是一个长长的句子可以换行的
+		</div>
+		<div class="weight">
+			你好 Hello World
+		</div>
+	</body>
+</html>
