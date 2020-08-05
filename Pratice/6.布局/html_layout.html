@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			body {
+				border: solid 2px black;
+				width: 240px;
+			}
+
+			header {
+				margin: 10px auto;
+				background: #e3e3e3;
+				height: 20px;
+				width: 200px;
+			}
+
+			article {
+				background: #f3f3f3;
+				width: 200px;
+				height: 100px;
+				box-sizing: border-box;
+				margin: 20px auto;
+				overflow: auto;
+			}
+
+			article.hot section {
+				background: #eee;
+				height: 100px;
+				width: 100px;
+				box-shadow: 0 0 5px #777;
+			}
+
+			article.hot section:first-of-type {
+				float: left;
+			}
+
+			article.hot section:last-of-type {
+				float: right;
+			}
+
+			@media (max-width: 375px) {
+				footer {
+					display: none;
+				}
+			}
+
+			article.swiper section {
+				background: #ddd;
+				height: 100px;
+				box-shadow: 0 0 5px #777;
+			}
+
+			article.swiper section {
+				width: 50px;
+				float: left;
+			}
+
+			footer {
+				background: #EEE;
+				height: 10px;
+				width: 200px;
+				margin: 10px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav></nav>
+		</header>
+		<article class="hot">
+			<section></section>
+			<section></section>
+		</article>
+		<article class="swiper">
+			<section></section>
+			<section></section>
+			<section></section>
+			<section></section>
+		</article>
+		<footer></footer>
+	</body>
+</html>

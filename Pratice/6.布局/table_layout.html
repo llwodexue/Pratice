@@ -5,29 +5,44 @@
 		<title></title>
 	</head>
 	<style type="text/css">
-		.left{
+		.table {
+			margin-top: 20px;
+			width: 200px;
+			height: 100px;
+			display: table;
+		}
+
+		.table-row {
+			display: table-row;
+		}
+
+		.table-cell {
+			vertical-align: center;
+			display: table-cell;
+		}
+
+		.left {
 			background: red;
+			vertical-align: middle;
 		}
-		.right{
+
+		.right {
 			background: blue;
-		}
-		table{
-			width: 800px;
-			height: 200px;
+			vertical-align: middle;
 		}
 	</style>
 	<body>
-		<table>
+		<!-- <table>
 			<tr>
 				<td class="left">left</td>
 				<td class="right">right</td>
 			</tr>
-		</table>
-<!-- 		<div class="table">
+		</table> -->
+		<div class="table">
 			<div class="table-row">
 				<div class="left table-cell">left</div>
 				<div class="right table-cell">right</div>
 			</div>
-		</div> -->
+		</div>
 	</body>
 </html>
