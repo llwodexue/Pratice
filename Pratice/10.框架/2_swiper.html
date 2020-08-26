@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" type="text/css" href="./swiper/css/swiper.css" />
+        <link rel="stylesheet" href="./css/2_swiper.css" />
+    </head>
+    <body>
+        <div class="swiper-banner">
+            <div class="swiper-wrapper" id="swiper-1">
+                <div class="swiper-slide">
+                    <img src="img/1.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/2.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/3.jpg" />
+                </div>
+			</div>
+			<!-- <div class="swiper-button-prev"></div> 左箭头。如果放置在swiper-container外面，需要自定义样式。
+			<div class="swiper-button-next"></div> 右箭头。如果放置在swiper-container外面，需要自定义样式。 -->
+        </div>
+<br>
+<br>
+<br>
+        <div class="swiper-nav">
+            <div class="swiper-wrapper" id="swiper-2">
+                <div class="swiper-slide"><img src="./img/凯旋门.png" /><p>凯旋门</p></div>
+                <div class="swiper-slide"><img src="./img/古罗马斗兽场.png" /><p>古罗马斗兽场</p></div>
+                <div class="swiper-slide"><img src="./img/大本钟.png" /><p>大本钟</p></div>
+                <div class="swiper-slide"><img src="./img/天坛.png" /><p>天坛</p></div>
+                <div class="swiper-slide"><img src="./img/巴黎圣母院.png" /><p>巴黎圣母院</p></div>
+                <div class="swiper-slide"><img src="./img/悉尼歌剧院.png" /><p>悉尼歌剧院</p></div>
+                <div class="swiper-slide"><img src="./img/比萨斜塔.png" /><p>比萨斜塔</p></div>
+                <div class="swiper-slide"><img src="./img/泰姬陵.png" /><p>泰姬陵</p></div>
+            </div>
+        </div>
+<br>
+<br>
+<br>
+        <div class="swiper-img">
+            <div class="swiper-wrapper" id="swiper-3">
+                <div class="swiper-slide"><img src="./img/凯旋门.png" /></div>
+                <div class="swiper-slide"><img src="./img/泰姬陵.png" /></div>
+                <div class="swiper-slide"><img src="./img/大本钟.png" /></div>
+                <div class="swiper-slide"><img src="./img/天坛.png" /></div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+    <div class="swiper-img-click">
+        <div class="swiper-wrapper" id="swiper-3">
+            <div class="swiper-slide"><img src="./img/凯旋门.png" /></div>
+            <div class="swiper-slide"><img src="./img/泰姬陵.png" /></div>
+            <div class="swiper-slide"><img src="./img/大本钟.png" /></div>
+            <div class="swiper-slide"><img src="./img/天坛.png" /></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+<br>
+<br>
+<br>
+        <div id="banner">
+            <div class="swiper-focus">
+                <div class="swiper-wrapper" id="swiper-4">
+                    <div class="swiper-slide"><div class="swiper-zoom-container"><img src="img/01.jpg" /></div></div>
+                    <div class="swiper-slide"><div class="swiper-zoom-container"><img src="img/02.jpg" /></div></div>
+                    <div class="swiper-slide"><div class="swiper-zoom-container"><img src="img/03.jpg" /></div></div>
+                    <div class="swiper-slide"><div class="swiper-zoom-container"><img src="img/04.jpg" /></div></div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+<br>
+<br>
+<br>
+        <script src="./swiper/js/swiper.js"></script>
+        <script>
+            new Swiper(".swiper-banner", {
+                speed: 600, //切换速度
+                loop: true, //循环模式
+				effect: "cube", //切换效果：方块
+				autoplay: {
+                    delay: 1000, //自动播放
+                },
+			});
+
+            new Swiper(".swiper-nav", {
+                slidesPerView: 4, //设置slider容器能够同时显示的slides数量
+                autoplay: true,
+			});
+
+			new Swiper('.swiper-focus', {
+                loop: true,
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+					renderBullet: function(index, className) {
+						return '<span class="' + className + '"><image src="img/0' + (index + 1) + '.jpg"></span>';
+					},
+				},
+				zoom: true, //开启焦距功能：双击slide会放大/缩小
+			});
+
+            new Swiper(".swiper-img", {
+				loop: true,
+				autoplay: {
+                    delay: 1000,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+					type: "fraction", //分式
+				},
+			});
+            new Swiper(".swiper-img-click", {
+				loop: true,
+				autoplay: {
+                    delay: 1000,
+                },
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true, //点击分页器的指示点分页器会控制Swiper切换
+					renderBullet: function(index, className) {
+						return '<span class="' + className + '">' + (index + 1) + '</span>';
+					}, //渲染分页器小点
+				},
+			});
+        </script>
+    </body>
+</html>

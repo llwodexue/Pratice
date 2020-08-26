@@ -1,0 +1,40 @@
+@import "./import/module3.scss";
+@import "./import/module4.scss";
+
+.block {
+    font-size: $fontSize;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+.wrapper {
+    background: lighten($bgColor, 40%);
+    .nav {
+        @extend .block;
+    }
+    .content {
+        @extend .block;
+        &:hover {
+            background: $bgColor;
+        }
+    }
+}
+
+// @mixin gen-col($n) {
+//     @if $n > 0 {
+//         @include gen-col($n - 1);
+//         .col-#{$n} {
+//             width: 1000px/6 * $n;
+//         }
+//     }
+// }
+// @include gen-col(6);
+
+@for $i from 1 to 6 {
+    .col-#{$i} {
+        width: 1000px/6 * $i;
+    }
+}

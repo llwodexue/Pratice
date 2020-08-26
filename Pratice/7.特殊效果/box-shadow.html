@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.container {
+			position: relative;
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			background: red;
+			margin: 300px auto;
+			box-shadow: 0 0 1px #000,
+				/* 眼睛 */
+				20px -26px 0px -10px #333,
+				-20px -26px 0 -10px #333,
+				-34px -40px 0 15px #fff,
+				-34px -40px 0 16px #000,
+				34px -40px 0 15px #fff,
+				34px -40px 0 16px #000,
+				0 55px 0 75px #fff,
+				0 55px 0 76px #000,
+				/* 脸 */
+				0 22px 0 120px #08BDEB,
+				0 22px 0 121px #000;
+		}
+
+		/* 鼻子下面那个线 */
+		.container::before {
+			content: '';
+			position: absolute;
+			bottom: -81px;
+			left: 17px;
+			height: 80px;
+			width: 2px;
+			background: #000;
+		}
+
+		/* 嘴 */
+		.container::after {
+			content: '';
+			position: absolute;
+			bottom: -83px;
+			left: -44px;
+			width: 125px;
+			height: 70px;
+			border-bottom-right-radius: 28px;
+			border-bottom-left-radius: 28px;
+			border-bottom: solid 2px black;
+		}
+	</style>
+	<body>
+		<div class="container"></div>
+	</body>
+</html>

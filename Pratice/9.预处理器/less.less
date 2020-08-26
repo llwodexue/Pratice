@@ -1,0 +1,33 @@
+@import "./import/module1.less";
+@import "./import/module2.less";
+
+.block {
+    font-size: @fontSize;
+    border: solid 1px #ccc;
+    border-radius: 4px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+.wrapper {
+    background: lighten(@bgColor, 40%);
+    .nav {
+		&:extend(.block);
+		background: darken(@bgColor, 40%);
+    }
+    .content:extend(.block) {
+        &:hover {
+            background: @bgColor;
+        }
+    }
+}
+
+.gen-col(@n) when(@n > 0){
+	.gen-col(@n - 1);
+	.col-@{n}{
+		width: 1000px/6*@n;
+	}
+}
+.gen-col(6);

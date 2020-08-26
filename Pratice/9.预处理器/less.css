@@ -1,0 +1,46 @@
+.content .header {
+  font-size: 14px;
+  color: blue;
+}
+.content .side {
+  font-size: 12px;
+  color: #ccccff;
+}
+.block,
+.wrapper .nav,
+.wrapper .content {
+  font-size: 12px;
+  border: solid 1px #ccc;
+  border-radius: 4px;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+.wrapper {
+  background: #ffcccc;
+}
+.wrapper .nav {
+  background: #330000;
+}
+.wrapper .content:hover {
+  background: red;
+}
+.col-1 {
+  width: 166.66666667px;
+}
+.col-2 {
+  width: 333.33333333px;
+}
+.col-3 {
+  width: 500px;
+}
+.col-4 {
+  width: 666.66666667px;
+}
+.col-5 {
+  width: 833.33333333px;
+}
+.col-6 {
+  width: 1000px;
+}

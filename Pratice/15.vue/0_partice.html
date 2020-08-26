@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 绑定元素的 innerHTML -->
+			<h1 v-html="title"></h1>
+			<div>
+				<!-- v-model 语法糖，实现双向绑定，会代替 placeholder位置，相当于
+                    :value="newProduct.name" @input="newProduct.name=$event.target.value" -->
+				名称：<input type="text" v-model="newProduct.name" />
+				<br />
+				库存：<input type="text" v-model="newProduct.stock" type="number" />
+				<button @click="addProduct">添加</button>
+			</div>
+			<h2 v-if="products.length===0">None</h2>
+			<ul>
+				<!-- 为什么需要这个key属性：https://juejin.im/post/6847902220319457293#heading-8 -->
+				<li v-for="(item, i) in products" :key="i">
+					名称：{{item.name}} 库存：{{item.stock}}
+					<button @click="delProduct(i)">删除</button>
+				</li>
+			</ul>
+			<h3>商品总数：{{products.length}} 总库存：{{totalStock}}</h3>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			var vm = new Vue({
+				el: "#app",
+				data: {
+					title: `<span style="color:red">Goods</span>`,
+					newProduct: {
+						name: "Default",
+						stock: 10
+					},
+					products: [{
+							name: "iphone",
+							stock: 10
+						},
+						{
+							name: "xiaomi",
+							stock: 5
+						},
+						{
+							name: "huawei",
+							stock: 0
+						},
+					]
+				},
+				methods: {
+					addProduct() {
+						this.products.push({
+							name: this.newProduct.name,
+							stock: this.newProduct.stock
+						})
+					},
+					delProduct(i) {
+						this.products.pop(i, 1)
+					}
+				},
+				// 计算属性会进行缓存，如果依赖不变，则直接进行缓存结果
+				computed: {
+					totalStock() {
+						// 第一种方法
+						let numStock = 0;
+						this.products.forEach((val, i) => {
+							numStock += val.stock
+						})
+						return numStock
+
+						// 第二张方法
+						// let numStock = 0
+						// for (let i = 0; i < this.products.length; i++) {
+						// 	numStock += this.products[i].stock
+						// }
+						// return numStock
+
+						// 第三种方法
+						// let numStock = 0
+						// for (let p of this.products) {
+						// 	numStock += p.stock
+						// }
+						// return numStock
+
+						// 第四种写法
+						// return this.products.reduce((acc, cur) => {
+						// 	return acc + cur.stock
+						// }, 0)
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

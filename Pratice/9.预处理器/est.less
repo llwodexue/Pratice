@@ -1,0 +1,27 @@
+@import "./est/all.less";
+
+// http://ecomfe.github.io/est/
+.global-reset();
+.box {
+    .inline-block();
+    .opacity(60);
+    height: 100px;
+    background: #0f0;
+    margin: 10px;
+}
+.left {
+    float: left;
+    .clearfix();
+}
+.row {
+    .make-row();
+    .col {
+        .make-column(1/4);
+        background: #f00;
+        height: 100px;
+    }
+}
+.my-triangle:after {
+    content: '';
+    .triangle(top left, #ccc, 100px, corner);
+}

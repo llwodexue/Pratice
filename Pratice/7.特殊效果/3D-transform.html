@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.container {
+			width: 200px;
+			height: 200px;
+			border: solid 1px red;
+			margin: 50px;
+			padding: 10px;
+			position: relative;
+			perspective: 500px;
+		}
+
+		#cube {
+			width: 200px;
+			height: 200px;
+			transform-style: preserve-3d;
+			transform: translateZ(-100px);
+			transition: transform 1s;
+		}
+
+		#cube:hover {
+			transform: translateZ(-100px) rotateX(90deg) rotateY(90deg);
+		}
+
+		#cube div {
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			line-height: 200px;
+			text-align: center;
+			font-size: 50px;
+		}
+
+		.front {
+			background: rgba(255, 0, 0, .3);
+			/* transform 变换是矩阵运算，书写顺序有影响 */
+			/* 正常是二维，加上 perspective 视角和 transform-style: preserve-3d 3d变化后即可发生变化 */
+			transform: translateZ(100px);
+		}
+
+		.back {
+			background: rgba(0, 255, 0, .3);
+			transform: translateZ(-100px) rotateY(180deg);
+		}
+
+		.left {
+			background: rgba(0, 0, 255, .3);
+			transform: translateX(-100px) rotateY(-90deg);
+		}
+
+		.right {
+			background: rgba(255, 255, 0, .3);
+			transform: translateX(100px) rotateY(90deg);
+		}
+
+		.top {
+			background: rgba(255, 0, 255, .3);
+			transform: translateY(-100px) rotateX(-90deg);
+		}
+
+		.bottom {
+			background: rgba(0, 255, 255, .3);
+			transform: translateY(100px) rotateX(90deg);
+		}
+	</style>
+	<body>
+		<div class="container">
+			<div id="cube">
+				<div class="front">1</div>
+				<div class="back">2</div>
+				<div class="right">3</div>
+				<div class="left">4</div>
+				<div class="top">5</div>
+				<div class="bottom">6</div>
+			</div>
+		</div>
+	</body>
+</html>
